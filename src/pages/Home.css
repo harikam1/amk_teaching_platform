@@ -1,0 +1,196 @@
+.home-container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* SCROLL TEXT */
+
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  background: #1e293b;
+  color: white;
+  padding: 12px 0;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scrollText 15s linear infinite;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* CAROUSEL */
+
+.carousel-wrapper {
+  margin-bottom: 35px;
+}
+
+/* COMMON SECTIONS */
+
+.home-hero-section,
+.home-about-preview,
+.home-services-preview,
+.home-why-choose,
+.home-mission {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* HERO */
+
+.home-hero-section {
+  text-align: center;
+}
+
+.home-hero-section h1 {
+  font-size: 38px;
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+.home-hero-section p {
+  font-size: 17px;
+  color: #475569;
+  line-height: 1.8;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* ABOUT */
+
+.home-about-preview h2,
+.home-services-preview h2,
+.home-why-choose h2,
+.home-mission h2 {
+  font-size: 28px;
+  color: #2563eb;
+  margin-bottom: 16px;
+}
+
+.home-about-preview p,
+.home-mission p {
+  font-size: 16px;
+  color: #334155;
+  line-height: 1.8;
+}
+
+/* SERVICES */
+
+.home-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 20px;
+}
+
+.home-service-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.home-service-card h3 {
+  color: #1e40af;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.home-service-card p {
+  color: #475569;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* WHY CHOOSE */
+
+.home-why-choose ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.home-why-choose li {
+  font-size: 16px;
+  color: #334155;
+  line-height: 1.9;
+  margin-bottom: 8px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+  .home-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-hero-section h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-container {
+    padding: 15px;
+  }
+
+  .scroll-text {
+    font-size: 14px;
+    animation: scrollText 12s linear infinite;
+  }
+
+  .home-hero-section,
+  .home-about-preview,
+  .home-services-preview,
+  .home-why-choose,
+  .home-mission {
+    padding: 20px;
+  }
+
+  .home-hero-section h1 {
+    font-size: 26px;
+  }
+
+  .home-hero-section p,
+  .home-about-preview p,
+  .home-mission p,
+  .home-why-choose li,
+  .home-service-card p {
+    font-size: 15px;
+  }
+
+  .home-about-preview h2,
+  .home-services-preview h2,
+  .home-why-choose h2,
+  .home-mission h2 {
+    font-size: 22px;
+  }
+
+  .home-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-service-card h3 {
+    font-size: 18px;
+  }
+}

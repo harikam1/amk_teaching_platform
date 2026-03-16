@@ -1,0 +1,157 @@
+.about-page {
+  max-width: 1300px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* HERO */
+
+.about-hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-hero h1 {
+  font-size: 38px;
+  margin-bottom: 12px;
+  color: #1e293b;
+}
+
+.about-hero p {
+  font-size: 18px;
+  color: #475569;
+  line-height: 1.7;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* CARDS ROW */
+
+.about-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 30px;
+  align-items: stretch;
+}
+
+/* SECTION CARD */
+
+.about-section {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.about-card {
+  height: 100%;
+}
+
+.about-section h2 {
+  color: #2563eb;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.about-section p {
+  line-height: 1.8;
+  color: #334155;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+/* LISTS */
+
+.about-list {
+  padding-left: 22px;
+  margin: 10px 0 16px;
+  list-style-type: none;
+  /* text-align: left; */
+}
+
+.about-list li {
+  color: #334155;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+/* TICK LIST */
+
+.tick-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tick-list li {
+  position: relative;
+  padding-left: 32px;
+}
+
+.tick-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #16a34a;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* MISSION SECTION */
+
+.about-page > .about-section:last-child {
+  margin-top: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+  .about-cards-row {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .about-hero h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-page {
+    padding: 25px 15px;
+  }
+
+  .about-hero {
+    text-align: left;
+  }
+
+  .about-hero h1 {
+    font-size: 28px;
+  }
+
+  .about-hero p {
+    font-size: 16px;
+  }
+
+  .about-section {
+    padding: 20px;
+    
+  }
+
+  .about-section h2 {
+    font-size: 21px;
+  }
+
+  .about-section p,
+  .about-list li {
+    font-size: 15px;
+  }
+}
+
+.ab{
+  padding-top: 50px;
+}

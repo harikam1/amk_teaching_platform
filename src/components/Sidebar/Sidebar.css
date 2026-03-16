@@ -1,0 +1,121 @@
+.sidebar {
+  width: 230px;
+  
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+}
+
+/* HEADER */
+
+.sidebar-header {
+
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo-img {
+  width: 140px;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn {
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+/* NAV ITEMS */
+
+.nav-item {
+  display: block;
+  padding: 10px 0;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  color: #38bdf8;
+}
+
+
+.nav-item.active {
+  background-color: #2e3192;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+/* MOBILE */
+
+@media (max-width:768px) {
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -270px;
+    transition: 0.3s;
+    z-index: 1000;
+    height: 100%;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  .close-btn {
+    display: block;
+    margin-left: 212px
+  }
+
+}
+
+.sidebar{
+  z-index:1000;
+}
+
+
+
+.sidebar-header {
+  position: relative;
+  display: inline-block;
+}
+
+.sidebar-header img {
+  display: block;
+  max-width: 100%;
+}
+
+.sparkle {
+  position: absolute;
+  /* Adjust top/left to move the sparkle to a specific facet */
+  top: -4%; 
+  left: 50%;
+  
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  
+  /* Creates a 4-pointed star shape */
+  clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+  
+  /* Adding a glow */
+  box-shadow: 0 0 10px #fff, 0 0 20px #fff;
+  
+  /* Link to the animation */
+  animation: blink 2s infinite ease-in-out;
+}
+
+/* The Animation Loop */
+@keyframes blink {
+  0%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,35 @@
+.service-details{
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.details-image{
+  width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.service-details h1{
+  font-size: 32px;
+  color: #1e293b;
+  margin-bottom: 15px;
+}
+
+.service-details p{
+  font-size: 18px;
+  line-height: 1.8;
+  color: #334155;
+  margin-bottom: 25px;
+}
+
+.back-btn{
+  text-decoration: none;
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
