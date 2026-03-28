@@ -19,10 +19,10 @@ const Contact = () => {
           <p>Adusumilli Meena Kumari</p>
 
           <h3>Email</h3>
-          <p>a6@gmail.com</p>
+          <p>meenakumariadusumilli@gmail.com</p>
 
           <h3>Phone</h3>
-          <p>+91 9110532995</p>
+          <p>+91 8885092000</p>
 
         </div>
 

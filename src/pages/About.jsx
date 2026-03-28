@@ -1,75 +1,119 @@
+import { useState } from "react";
 import "./About.css";
 
+// images
+import profileImg from "../assets/aboutme.jpeg";
+import envImg from "../assets/ourlearning.jpeg";
+import envImg1 from "../assets/ourlearning1.jpeg";
+
+// certificates
+import cert1 from "../assets/cert1.jpeg";
+import cert2 from "../assets/cert2.jpeg";
+import cert3 from "../assets/cert3.jpeg";
+import cert4 from "../assets/cert4.jpeg";
+
 const About = () => {
+
+  const [selectedImg, setSelectedImg] = useState(null);
+
   return (
     <div className="about-page">
+
+      {/* HERO */}
       <section className="about-hero">
         <h1>About Our Learning Platform</h1>
         <p>
           A supportive learning space designed to help students overcome
-          difficulties in studies and build confidence through simple,
-          step-by-step learning.
+          difficulties in studies and build confidence.
         </p>
       </section>
 
-    <div className="about-cards-row">
-  <section className="about-section about-card">
-    <h2>About Me</h2>
-    <p>
-      I am <strong>Meenakumari Adusumilli</strong>, a Special Educator and
-      Remedial Therapist with <strong>14+ years of experience</strong>{" "}
-      supporting children with learning difficulties, developmental delays,
-      and academic challenges.
-    </p>
-    <p>
-      I believe every child can succeed with the right guidance, patience,
-      and structured intervention.
-    </p>
-  </section>
+      {/* ABOUT ME */}
+      <div className="about-block about-me-flex">
 
-  <section className="about-section about-card">
-    <h2>Why Choose Me?</h2>
-    <ul className="about-list tick-list">
-      <li>14+ Years Experience</li>
-      <li>Individualized IEP Plans</li>
-      <li>1:1 Personalized Sessions</li>
-      <li>Online & Offline Support</li>
-      <li>School Coordination Support</li>
-      <li>Holistic Emotional + Academic Approach</li>
-    </ul>
-  </section>
+        <div className="about-me-img">
+          <img src={profileImg} alt="Meenakumari" />
+        </div>
 
-  <section className="about-section about-card">
-    <h2>Professional Profile</h2>
-    <p>
-      I am a certified Special Educator and Remedial Therapist with
-      extensive experience working with children across age groups. I
-      specialize in supporting students with:
-    </p>
+        <div className="about-me-text">
+          <h2>About Me</h2>
 
-    <ul className="about-list">
-      <li>Specific Learning Disabilities (SLD)</li>
-      <li>ADHD</li>
-      <li>Autism Spectrum</li>
-      <li>Slow Learners</li>
-      <li>Academic Backwardness</li>
-      <li>Emotional & Behavioural Concerns</li>
-    </ul>
+          <p>
+            I am <strong>Meenakumari Adusumilli</strong>, a dedicated Special Educator
+            with over 14+ years of experience in supporting children with diverse
+            learning needs.
+          </p>
 
-    <p>
-      I also provide Cognitive Behaviour Therapy (CBT) interventions and
-      structured career counselling guidance for adolescents.
-    </p>
-  </section>
-</div>
-      <section className=" ab">
-        <h2>Mission Statement</h2>
-        <p>
-          My mission is to bridge learning gaps, build emotional resilience,
-          and empower children to achieve independence and confidence in
-          academics and life.
+          <p>
+            I specialize in identifying individual learning challenges and designing
+            personalized strategies that make learning easier, engaging, and effective
+            for every child.
+          </p>
+
+          <p>
+            My approach focuses on building strong foundational skills, improving
+            concentration, and boosting confidence through structured and interactive
+            sessions.
+          </p>
+        </div>
+
+      </div>
+
+      <div className="about-divider"></div>
+
+      {/* LEARNING ENVIRONMENT */}
+      <div className="about-block learning-env-clean">
+
+        <h2>Our Learning Environment</h2>
+
+        <div className="env-row">
+          <div className="env-full">
+            <img src={envImg} alt="Learning Environment" />
+          </div>
+
+          <div className="env-small">
+            <img src={envImg1} alt="Learning Side" />
+          </div>
+        </div>
+
+        <p className="learning-text">
+          A safe, supportive, and engaging learning space that encourages children 
+          to build confidence, develop independence, and achieve their full potential.
         </p>
-      </section>
+
+      </div>
+
+      <div className="about-divider"></div>
+
+      {/* ✅ CERTIFICATIONS (NO CONTAINER NOW) */}
+      <div className="about-block cert-clean">
+
+        <h2>Certifications</h2>
+
+        <p className="cert-text">
+          I hold professional certifications in special education and remedial therapy.
+        </p>
+
+        <div className="cert-grid">
+          {[cert1, cert2, cert3, cert4].map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`Certificate ${index + 1}`}
+              onClick={() => setSelectedImg(img)}
+            />
+          ))}
+        </div>
+
+      </div>
+
+      {/* MODAL */}
+      {selectedImg && (
+        <div className="modal" onClick={() => setSelectedImg(null)}>
+          <img src={selectedImg} alt="Full Certificate" className="modal-img" />
+        </div>
+      )}
+
     </div>
   );
 };

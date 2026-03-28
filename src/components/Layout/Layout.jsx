@@ -1,45 +1,26 @@
-import { useState } from "react";
-import Sidebar from "../Sidebar/Sidebar";
 import Topbar from "../Topbar/Topbar";
+import Navbar from "../Navbar/Navbar";  // ✅ ADD THIS
 import Footer from "../Footer/Footer";
+import { Outlet } from "react-router-dom";
 import "./Layout.css";
 
-const Layout = ({ children }) => {
-
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const closeSidebar = () => {
-    setIsSidebarOpen(false);
-  };
-
+const Layout = () => {
   return (
     <div className="layout">
 
-      <Sidebar
-        isSidebarOpen={isSidebarOpen}
-        closeSidebar={closeSidebar}
-      />
+      {/* TOPBAR */}
+      <Topbar />
 
-      {/* Overlay for mobile */}
-      {isSidebarOpen && (
-        <div className="overlay" onClick={closeSidebar}></div>
-      )}
+      {/* ✅ NAVBAR (IMPORTANT) */}
+      <Navbar />
 
-      <div className="main-section">
-
-        <Topbar toggleSidebar={toggleSidebar} />
-
-        <div className="page-content">
-          {children}
-        </div>
-
-        <Footer />
-
+      {/* CONTENT */}
+      <div className="page-content">
+        <Outlet />
       </div>
+
+      {/* FOOTER */}
+      <Footer />
 
     </div>
   );

@@ -1,63 +1,30 @@
-import { useState } from "react";
 import "./Topbar.css";
-import profile from "../../assets/amklog.jpg";
 
-const Topbar = ({ toggleSidebar }) => {
+const Topbar = () => {
+  return (
+    <div className="topbar">
+      <div className="topbar-left">
 
-    const [showPopup, setShowPopup] = useState(false);
+        <a href="tel:+918885092000" className="topbar-link">
+          📞 +91 8885092000
+        </a>
 
-    const togglePopup = () => {
-        setShowPopup(!showPopup);
-    };
+        <a href="mailto:amkeducation@gmail.com" className="topbar-link">
+          📧 meenakumariadusumilli@gmail.com
+        </a>
 
-    return (
-        <div className="navbar">
+        <a
+          href="https://www.google.com/maps?q=AMK'S+Remedial+Institution+Center,+Kapra,+Secunderabad,+Telangana"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="topbar-link"
+        >
+          📍 Hyderabad
+        </a>
 
-            <div className="left">
-
-                <span className="hamburger" onClick={toggleSidebar}>
-                    ☰
-                </span>
-
-                <input
-                    type="text"
-                    placeholder="Search courses..."
-                    className="search"
-                />
-
-            </div>
-
-            <div className="right">
-       
-                <span className="notification">🔔</span>
-
-                <img
-                    src={profile}
-                    className="profile"
-                    onClick={togglePopup}
-                    alt="profile"
-                />
-
-                {showPopup && (
-                    <div className="profile-popup">
-
-                        <img src={profile} className="popup-img" />
-
-                        <h4>Adusumilli Meena Kumari</h4>
-                         
-                        <p>Special Educator & Remedial Therapist </p>
-                        <p>14+ Years Experience</p>
-
-                        <hr />
-                        <p className="menu-item">Logout</p>
-
-                    </div>
-                )}
-
-            </div>
-
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Topbar;

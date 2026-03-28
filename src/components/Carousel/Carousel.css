@@ -5,29 +5,33 @@
     margin-bottom: 20px;
 }
 
+/* MAIN SWIPER */
 .carousel-swiper {
     width: 100%;
-    height: 350px;
+    height: 80vh; /* 🔥 Increased & responsive */
 }
 
 .carousel-swiper img {
     width: 100%;
-    height: 350px;
+    height: 60vh; /* match parent */
     object-fit: cover;
+    object-position: center; /* better alignment */
     border-radius: 8px;
 }
 
-.carousel-container{
-  width:100%;
-  max-width:100%;
-  overflow:hidden;
-  margin-top: 30px;
+/* SECOND CONTAINER */
+.carousel-container {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
 }
 
-.carousel-container img{
-  width:100%;
-  height:350px;
-  object-fit:cover;
-  display:block;
-  border-radius: 8px;
+.carousel-container img {
+    width: 100%;
+    height: 60vh; /* 🔥 Increased */
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 8px;
 }

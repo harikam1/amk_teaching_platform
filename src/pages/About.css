@@ -1,157 +1,243 @@
+/* ========================= */
+/* MAIN PAGE */
+/* ========================= */
+
 .about-page {
-  max-width: 1300px;
-  margin: auto;
+  width: 100%;
   padding: 40px 20px;
 }
 
+/* ========================= */
 /* HERO */
+/* ========================= */
 
 .about-hero {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .about-hero h1 {
   font-size: 38px;
-  margin-bottom: 12px;
-  color: #1e293b;
+  color: #073580;
+  margin-bottom: 10px;
+  font-weight: 800;
 }
 
 .about-hero p {
   font-size: 18px;
+  max-width: 850px;
+  margin: auto;
   color: #475569;
   line-height: 1.7;
-  max-width: 850px;
-  margin: 0 auto;
 }
 
-/* CARDS ROW */
+/* ========================= */
+/* COMMON SPACING */
+/* ========================= */
 
-.about-cards-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  margin-bottom: 30px;
-  align-items: stretch;
+.about-block {
+  margin-bottom: 70px;
 }
 
-/* SECTION CARD */
-
-.about-section {
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  margin-bottom: 20px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+.about-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c7d2fe, transparent);
+  margin: 50px 0;
 }
 
-.about-card {
-  height: 100%;
+/* ========================= */
+/* ABOUT ME */
+/* ========================= */
+
+.about-me-flex {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.about-section h2 {
+.about-me-img img {
+  width: 280px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease;
+}
+
+.about-me-img img:hover {
+  transform: scale(1.05);
+}
+
+.about-me-text {
+  flex: 1;
+}
+
+.about-me-text h2 {
+  font-size: 30px;
   color: #2563eb;
-  margin-bottom: 16px;
-  font-size: 24px;
+  margin-bottom: 12px;
 }
 
-.about-section p {
-  line-height: 1.8;
-  color: #334155;
-  font-size: 16px;
-  margin-bottom: 14px;
-}
-
-/* LISTS */
-
-.about-list {
-  padding-left: 22px;
-  margin: 10px 0 16px;
-  list-style-type: none;
-  /* text-align: left; */
-}
-
-.about-list li {
-  color: #334155;
-  font-size: 16px;
-  line-height: 1.8;
+.about-me-text p {
+  color: #475569;
+  line-height: 1.7;
   margin-bottom: 10px;
 }
 
-/* TICK LIST */
+/* ========================= */
+/* LEARNING ENV */
+/* ========================= */
 
-.tick-list {
-  list-style: none;
-  padding-left: 0;
+.learning-env-clean {
+  text-align: center;
 }
 
-.tick-list li {
-  position: relative;
-  padding-left: 32px;
+.learning-env-clean h2 {
+  font-size: 30px;
+  color: #2563eb;
+  margin-bottom: 15px;
 }
 
-.tick-list li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
+.env-row {
+  display: flex;
+  gap: 25px;
+  margin-top: 25px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.env-full {
+  flex: 3;
+}
+
+.env-full img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.env-small {
+  flex: 1;
+}
+
+.env-small img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+
+.env-small img:hover {
+  transform: scale(1.05);
+}
+
+.learning-text {
+  max-width: 850px;
+  margin: 20px auto;
+  color: #475569;
+  line-height: 1.8;
+}
+
+/* ========================= */
+/* CERTIFICATIONS */
+/* ========================= */
+
+.cert-clean {
+  text-align: center;
+}
+
+.cert-clean h2 {
+  font-size: 30px;
+  color: #2563eb;
+}
+
+.cert-text {
+  max-width: 800px;
+  margin: 10px auto 20px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.cert-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cert-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+
+.modal {
+  position: fixed;
   top: 0;
-  color: #16a34a;
-  font-weight: bold;
-  font-size: 18px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  cursor: pointer;
 }
 
-/* MISSION SECTION */
-
-.about-page > .about-section:last-child {
-  margin-top: 10px;
+.modal-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
 }
 
+/* ========================= */
 /* RESPONSIVE */
+/* ========================= */
 
 @media (max-width: 992px) {
-  .about-cards-row {
-    grid-template-columns: 1fr;
-    gap: 70px;
+
+  .about-me-flex {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .about-hero h1 {
-    font-size: 32px;
+  .env-row {
+    flex-direction: column;
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 576px) {
-  .about-page {
-    padding: 25px 15px;
-  }
-
-  .about-hero {
-    text-align: left;
-  }
 
   .about-hero h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
   .about-hero p {
-    font-size: 16px;
-  }
-
-  .about-section {
-    padding: 20px;
-    
-  }
-
-  .about-section h2 {
-    font-size: 21px;
-  }
-
-  .about-section p,
-  .about-list li {
     font-size: 15px;
   }
-}
 
-.ab{
-  padding-top: 50px;
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,11 +1,13 @@
+/* ================= PAGE ================= */
 .services-page {
   max-width: 1300px;
   margin: auto;
   padding: 40px 20px;
+  position: relative;
+  z-index: 1;
 }
 
-/* HERO SECTION */
-
+/* ================= HERO ================= */
 .services-hero {
   text-align: center;
   margin-bottom: 40px;
@@ -14,7 +16,8 @@
 .services-hero h1 {
   font-size: 38px;
   margin-bottom: 12px;
-  color: #1e293b;
+  color: #073580;
+  font-weight: 790;
 }
 
 .services-hero p {
@@ -25,106 +28,173 @@
   margin: 0 auto;
 }
 
-/* GRID */
-
+/* ================= GRID ================= */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
 }
 
-/* LINK WRAPPER */
-
+/* ================= LINK ================= */
 .service-link {
   text-decoration: none;
   color: inherit;
+  display: flex;
 }
 
-/* CARD */
-
+/* ================= CARD ================= */
 .service-card {
+  position: relative;
   background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.35s ease;
   height: 100%;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+}
+
+/* Gradient border effect */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 16px;
+  background: linear-gradient(120deg,#2563eb,#9333ea,#06b6d4);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 0;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: #ffffff;
+  border-radius: 16px;
+  z-index: 1;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
-/* SERVICE IMAGE */
+.service-card:hover::before {
+  opacity: 1;
+}
 
+/* ================= IMAGE ================= */
 .service-image {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  transition: transform 0.4s ease;
+  z-index: 2;
+  position: relative;
 }
 
-/* CARD CONTENT */
+.service-card:hover .service-image {
+  transform: scale(1.08);
+}
+
+/* ================= CONTENT INFO ================= */
+.service-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Occupies remaining space */
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
 
 .service-card h2 {
-  font-size: 22px;
+  font-size: 21px;
   color: #2563eb;
-  margin: 18px 20px 10px 20px;
+  margin-bottom: 10px;
   line-height: 1.4;
 }
 
 .service-card p {
-  font-size: 16px;
+  font-size: 15px;
   color: #334155;
-  line-height: 1.8;
-  margin: 0 20px 20px 20px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Pushes the button to the bottom */
 }
 
-/* TABLET */
+/* ================= ENQUIRY BUTTON (RIGHT ALIGNED) ================= */
+.enquiry-btn {
+  /* Alignment Logic */
+  align-self: flex-end; /* Pushes button to the right */
+  width: fit-content;   /* Button only as wide as its content */
+  
+  /* Styling */
+  background: #25D366; 
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+}
 
+.enquiry-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+}
+
+.enquiry-btn svg {
+  flex-shrink: 0;
+}
+
+/* ================= SHINE EFFECT ================= */
+.service-card .shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transform: skewX(-25deg);
+  z-index: 3;
+}
+
+.service-card:hover .shine {
+  left: 120%;
+  transition: 0.7s;
+}
+
+/* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .services-hero h1 {
-    font-size: 32px;
-  }
 }
 
-/* MOBILE */
-
 @media (max-width: 576px) {
-  .services-page {
-    padding: 25px 15px;
-  }
-
-  .services-hero {
-    text-align: left;
-  }
-
-  .services-hero h1 {
-    font-size: 28px;
-  }
-
-  .services-hero p {
-    font-size: 16px;
-  }
-
   .services-grid {
     grid-template-columns: 1fr;
   }
-
-  .service-card h2 {
-    font-size: 20px;
-  }
-
-  .service-card p {
-    font-size: 15px;
-  }
-
-  .service-image {
-    height: 160px;
+  
+  .enquiry-btn {
+    width: 100%; /* Optional: Full width on mobile for easier tapping */
+    padding: 14px;
   }
 }

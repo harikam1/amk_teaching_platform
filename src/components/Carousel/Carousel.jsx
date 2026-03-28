@@ -7,12 +7,15 @@ import "swiper/css/pagination";
 
 import "./Carousel.css";
 
-import study1 from "../../assets/study1.jpg";
+// import study1 from "../../assets/study1.jpg";
 
-import study3 from "../../assets/study3.jpg";
-import study5 from "../../assets/study5.jpg";
-import study4 from "../../assets/study4.jpeg";
-
+// import study3 from "../../assets/study3.jpg";
+// import study5 from "../../assets/study5.jpg";
+// import study4 from "../../assets/study4.jpeg";
+import h4 from "../../assets/c1.jpg";
+import h2 from "../../assets/c2.jpg";
+import h1 from "../../assets/c3.jpg";
+import study3 from "../../assets/c4.jpg";
 const Carousel = () => {
   return (
     <div className="carousel-container">
@@ -28,11 +31,11 @@ const Carousel = () => {
       >
 
         <SwiperSlide>
-          <img src={study1} alt="study" />
+          <img src={h4} alt="study" />
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src={study5} alt="study" />
+          <img src={h2} alt="study" />
         </SwiperSlide>
 
         <SwiperSlide>
@@ -40,7 +43,7 @@ const Carousel = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <img src={study4} alt="study" />
+          <img src={h1} alt="study" />
         </SwiperSlide>
 
       </Swiper>

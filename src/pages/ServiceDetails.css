@@ -1,35 +1,118 @@
-.service-details{
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.details-image{
+/* ===== SERVICE DETAILS ===== */
+.service-details {
+  max-width: 1100px;   /* 🔥 increased width */
   width: 100%;
-  max-height: 350px;
-  object-fit: cover;
+  margin: auto;
+  padding: 50px 20px;
+  text-align: center;
+  background: #f8fbff;
   border-radius: 12px;
-  margin-bottom: 20px;
 }
 
-.service-details h1{
-  font-size: 32px;
-  color: #1e293b;
-  margin-bottom: 15px;
-}
-
-.service-details p{
-  font-size: 18px;
-  line-height: 1.8;
-  color: #334155;
+/* ===== CARD ===== */
+.card-wrapper {
+  display: flex;
+  justify-content: center;
   margin-bottom: 25px;
 }
 
-.back-btn{
-  text-decoration: none;
+/* ===== TITLE ===== */
+.service-details h1 {
+  font-size: 32px;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* ===== DESCRIPTION ===== */
+.desc {
+  max-width: 900px;   /* 🔥 increased */
+  margin: 10px auto 25px;
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* ===== FEATURES HEADING ===== */
+.service-details h3 {
+  color: #1e40af;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* ===== YELLOW UNDERLINE ===== */
+.service-details h3::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #facc15;
+  display: block;
+  margin: 8px auto;
+  border-radius: 2px;
+}
+
+/* ===== FEATURES LIST ===== */
+.features-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;   /* 🔥 increased */
+  margin: auto;
+  text-align: left;
+}
+
+/* ===== EACH FEATURE ===== */
+.features-list li {
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 12px 18px;
+  background: #eef2ff;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+/* ===== HOVER EFFECT ===== */
+.features-list li:hover {
+  background: #fde68a;
+  transform: translateX(5px);
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+  margin-top: 25px;
+  display: inline-block;
   background: #2563eb;
   color: white;
   padding: 10px 20px;
   border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #facc15;
+  color: #1e3a8a;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .service-details {
+    padding: 30px 15px;
+  }
+
+  .service-details h1 {
+    font-size: 24px;
+  }
+
+  .desc {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .features-list {
+    max-width: 100%;
+  }
+
+  .features-list li {
+    font-size: 14px;
+    padding: 10px;
+  }
 }

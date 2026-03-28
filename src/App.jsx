@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 
 import Home from "./pages/Home";
@@ -9,26 +9,30 @@ import ServiceDetails from "./pages/ServiceDetails";
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
+      <Routes>
 
-      <Layout>
+        {/* Layout Wrapper */}
+        <Route path="/" element={<Layout />}>
 
-        <Routes>
+          {/* Home */}
+          <Route index element={<Home />} />
 
-          <Route path="/" element={<Home />} />
+          {/* Services */}
+          <Route path="services" element={<Services />} />
+          <Route path="services/:id" element={<ServiceDetails />} />
 
-          <Route path="/services" element={<Services/>} />
-          
-          <Route path="/Services/:id" element={<ServiceDetails/>} />
-          <Route path="/about" element={<About />} />
+          {/* Other Pages */}
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
 
-          <Route path="/contact" element={<Contact />} />
+          {/* Optional: 404 Page */}
+          <Route path="*" element={<h2 style={{textAlign:"center"}}>Page Not Found</h2>} />
 
-        </Routes>
+        </Route>
 
-      </Layout>
-
-    </BrowserRouter>
+      </Routes>
+    </HashRouter>
   );
 }
 
